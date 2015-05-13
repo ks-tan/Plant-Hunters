@@ -37,9 +37,10 @@ public class PlayerControl : MonoBehaviour {
     {
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-
-        if (grounded)
+        
+        if (grounded && rb.velocity.y <= 0)
         {
+            
             //doubleJump = false;
             anim.SetBool("IsJumping", false);
         }
@@ -49,12 +50,14 @@ public class PlayerControl : MonoBehaviour {
         //if ((grounded || (!doubleJump && name == ladybugName)) && Input.GetButtonDown("Jump"))
         {
             jump = true;
-            if (!grounded)
+            anim.SetBool("IsJumping", true);
+            //if (!grounded)
             //if (!doubleJump && !grounded)
-            {
-                jump = true;
+           // {
+            //    jump = true;
+            //    anim.SetBool("IsJumping", true);
                 //doubleJump = true;
-            }
+          //  }
         }
 
     }
@@ -109,7 +112,7 @@ public class PlayerControl : MonoBehaviour {
 
         if (jump)
         {
-            anim.SetBool("IsJumping", true);
+           
             // Add a vertical force to the player.
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(new Vector2(0f, m_jumpHeight), ForceMode2D.Impulse);

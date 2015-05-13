@@ -54,7 +54,6 @@ public class bossAI : MonoBehaviour {
 				GOprojectile = Instantiate(Resources.Load("projectiles/Prefab/bossProj"), new Vector3(transform.position.x, 
 				             		       transform.position.y + 2.0f, -0.1f), Quaternion.identity) as GameObject;
 				
-				GOprojectile.GetComponent<Animator>().speed = 0.3f;
 				GOprojectile.transform.position = new Vector3(GOprojectile.transform.position.x, GOprojectile.transform.position.y, -0.1f);
 				
 				//int angle = Random.Range(0, 11) * 30;

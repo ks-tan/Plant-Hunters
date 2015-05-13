@@ -1,19 +1,20 @@
 fileFormatVersion: 2
-guid: f8dfd272db64ea14b90c4d690f2e4c94
+guid: cda65b25dfa7a62459ecd1b7b048151f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: leaf blade_0
-    21300002: leaf blade_1
-    21300004: leaf blade_2
-    21300006: leaf blade_3
-    21300008: leaf blade_4
-    21300010: leaf blade_5
-    21300012: leaf blade_6
-    21300014: leaf blade_7
-    21300016: leaf blade_8
-    21300018: leaf blade_9
-    21300020: leaf blade_10
-    21300022: leaf blade_11
+    21300000: mantisattackcollate_0
+    21300002: mantisattackcollate_1
+    21300004: mantisattackcollate_2
+    21300006: mantisattackcollate_3
+    21300008: mantisattackcollate_4
+    21300010: mantisattackcollate_5
+    21300012: mantisattackcollate_6
+    21300014: mantisattackcollate_7
+    21300016: mantisattackcollate_8
+    21300018: mantisattackcollate_9
+    21300020: mantisattackcollate_10
+    21300022: mantisattackcollate_11
+    21300024: mantisattackcollate_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,123 +56,133 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: leaf blade_0
+    - name: mantisattackcollate_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 500
-        width: 213
-        height: 220
+        y: 1447
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_1
+    - name: mantisattackcollate_1
       rect:
         serializedVersion: 2
-        x: 213
-        y: 500
-        width: 213
-        height: 220
+        x: 598
+        y: 1447
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_2
+    - name: mantisattackcollate_2
       rect:
         serializedVersion: 2
-        x: 426
-        y: 500
-        width: 213
-        height: 220
+        x: 1196
+        y: 1447
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_3
+    - name: mantisattackcollate_3
       rect:
         serializedVersion: 2
-        x: 639
-        y: 500
-        width: 213
-        height: 220
+        x: 1794
+        y: 1447
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_4
-      rect:
-        serializedVersion: 2
-        x: 852
-        y: 500
-        width: 213
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_5
-      rect:
-        serializedVersion: 2
-        x: 1065
-        y: 500
-        width: 213
-        height: 220
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_6
+    - name: mantisattackcollate_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 280
-        width: 213
-        height: 220
+        y: 965
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_7
+    - name: mantisattackcollate_5
       rect:
         serializedVersion: 2
-        x: 213
-        y: 280
-        width: 213
-        height: 220
+        x: 598
+        y: 965
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_8
+    - name: mantisattackcollate_6
       rect:
         serializedVersion: 2
-        x: 426
-        y: 280
-        width: 213
-        height: 220
+        x: 1196
+        y: 965
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_9
+    - name: mantisattackcollate_7
       rect:
         serializedVersion: 2
-        x: 639
-        y: 280
-        width: 213
-        height: 220
+        x: 1794
+        y: 965
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_10
+    - name: mantisattackcollate_8
       rect:
         serializedVersion: 2
-        x: 852
-        y: 280
-        width: 213
-        height: 220
+        x: 0
+        y: 483
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leaf blade_11
+    - name: mantisattackcollate_9
       rect:
         serializedVersion: 2
-        x: 852
-        y: 60
-        width: 213
-        height: 220
+        x: 598
+        y: 483
+        width: 598
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate_10
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 483
+        width: 598
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate_11
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 483
+        width: 598
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 598
+        height: 482
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

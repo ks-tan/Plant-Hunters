@@ -4,9 +4,19 @@ using System.Collections;
 public class bossProj : MonoBehaviour {
 	private float dirX;
 	private float dirY;
+    private Animator anim;
     public int projDmg = 2;
 
 
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        anim.Play("BossProj_leaf",-1,0);
+    }
 	public void SetDirection(float _dirX, float _dirY)
 	{
 		dirX = _dirX;

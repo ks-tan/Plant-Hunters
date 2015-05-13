@@ -6,7 +6,11 @@ public class MantisSlashScript : MonoBehaviour {
     public float m_cooldownTimer = 0.2f;
     private bool onCooldown = false;
     private float m_timeStamp;
+    private Animator anim;
 
+    void Awake() {
+        anim = GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -19,6 +23,11 @@ public class MantisSlashScript : MonoBehaviour {
         {
             onCooldown = false;
         }
+        if (Input.GetButtonDown("Fire1P2") && !onCooldown)
+        {
+            anim.Play("Mantis_attack", -1, 0);
+            StartCooldown();
+        }
     }
 
     void StartCooldown()
@@ -30,12 +39,13 @@ public class MantisSlashScript : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerStay2D (Collider2D other) {
 	    if(Input.GetButtonDown("Fire1P2") && other.collider2D.tag != "Ground" && !onCooldown) {
+           
             ComponentHealth enemyHp = other.gameObject.GetComponent<ComponentHealth>();
             if (enemyHp != null)
             {
                 enemyHp.Modify(-slashDmg);
             }
-            StartCooldown();
+            
         }
 	}
 }
