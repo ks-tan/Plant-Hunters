@@ -1,7 +1,20 @@
 fileFormatVersion: 2
 guid: d6d79412c1d89dc40a132defcec333f3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mantisattackcollate02_0
+    21300002: mantisattackcollate02_1
+    21300004: mantisattackcollate02_2
+    21300006: mantisattackcollate02_3
+    21300008: mantisattackcollate02_4
+    21300010: mantisattackcollate02_5
+    21300012: mantisattackcollate02_6
+    21300014: mantisattackcollate02_7
+    21300016: mantisattackcollate02_8
+    21300018: mantisattackcollate02_9
+    21300020: mantisattackcollate02_10
+    21300022: mantisattackcollate02_11
+    21300024: mantisattackcollate02_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +38,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +55,136 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mantisattackcollate02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1447
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_1
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 1447
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_2
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 1447
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_3
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 1447
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 965
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_5
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 965
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_6
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 965
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_7
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 965
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 483
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_9
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 483
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_10
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 483
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_11
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 483
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantisattackcollate02_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 987
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
