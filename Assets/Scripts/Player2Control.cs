@@ -29,14 +29,7 @@ public class Player2Control : MonoBehaviour {
         groundCheck = transform.Find("/" + name + "/groundCheck");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag != "Ground")
-        {
-            Physics2D.IgnoreCollision(collider2D, collision.collider);
-
-        }
-    }
+    
 
     void Update()
     {
@@ -87,6 +80,10 @@ public class Player2Control : MonoBehaviour {
         {
             // ... set the player's velocity to the maxSpeed in the x axis.
             rb.velocity = new Vector3(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y, 0);
+        }
+
+        if(h == 0) {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
 
         // If the input is moving the player right and the player is facing left...
