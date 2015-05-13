@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 
     private Rigidbody2D rb;
-    public bool facingRight = true;
+    public bool facingRight = false;
     public float maxSpeed = 10f;
     public float moveForce = 100f;
     public float floatForce = 10f;

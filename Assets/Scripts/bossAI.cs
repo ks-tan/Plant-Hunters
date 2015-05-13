@@ -148,4 +148,9 @@ public class bossAI : MonoBehaviour {
 		RainEvent();
 		SpawnSpikes();
 	}
+
+    public bool GetIsRaining()
+    {
+        return isRain;
+    }
 }
