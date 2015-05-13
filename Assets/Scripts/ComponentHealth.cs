@@ -23,11 +23,21 @@ public class ComponentHealth : MonoBehaviour
     public void Modify(float amount)
 	{
         
+        
         if(!isInvul) {
             if(Mathf.Abs(amount)>=1) {
                 Color c = tag == "Enemy"? Color.red : Color.magenta;
-
                 UIFloatingText.current.Show(transform.position, amount + "", c);
+
+                if (name == "mantis")
+                {
+                    GetComponent<Animator>().Play("Mantis_kenahit", -1, 0);
+                }
+
+                if (name == "ladybug")
+                {
+                    GetComponent<Animator>().Play("Ladybug_kenahit", -1, 0);
+                }
             }
             
 		    currHP += amount;

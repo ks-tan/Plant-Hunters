@@ -5,12 +5,14 @@ public class ShieldScript : MonoBehaviour {
     public bool isShielding = false;
     public float depletionSpd = 0.5f;
     public float regenSpd = 0.3f;
+    public int threshold = 30; 
     private ComponentHealth bugHp;
     private Collider2D shieldCheck;
     private Rigidbody2D rb;
     private ComponentEnergy energy;
     private Animator shieldAnim;
     private SpriteRenderer shieldSprite;
+
 
     void Awake()
     {
@@ -49,7 +51,8 @@ public class ShieldScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2") && energy.CurrEnergy > 10) {
+        if (Input.GetButton("Fire2") && energy.CurrEnergy > threshold)
+        {
             isShielding = true;
         }
         if (Input.GetButtonUp("Fire2"))
