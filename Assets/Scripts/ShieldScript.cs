@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ShieldScript : MonoBehaviour {
-    public bool IsShielding = false;
+    public bool isShielding = false;
     public float depletionSpd = 0.5f;
     public float regenSpd = 0.3f;
     private Collider2D shieldCheck;
@@ -28,17 +28,21 @@ public class ShieldScript : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire2")) {
-            IsShielding = true;
+        if(Input.GetButtonDown("Fire2") && energy.CurrEnergy > 10) {
+            isShielding = true;
         }
         if (Input.GetButtonUp("Fire2"))
         {
-            IsShielding = false;
+            isShielding = false;
         }
-        if (IsShielding)
+        if (isShielding)
         {
             shieldCheck.enabled = true;
             energy.Modify(-(depletionSpd ));
+            if (energy.CurrEnergy <= 1)
+            {
+                isShielding = false;
+            }
         }
         else
         {
