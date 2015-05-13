@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour {
-
+public class Player2Control : MonoBehaviour {
     private Rigidbody2D rb;
     public bool facingRight = true;
     public float maxSpeed = 10f;
@@ -13,8 +12,6 @@ public class PlayerControl : MonoBehaviour {
     private Transform groundCheck;			// A position marking where to check if the player is grounded.
     public bool grounded = false;			// Whether or not the player is grounded.
     private Animator anim;
-    private string ladybugName = "ladybug";
-    private string mantisName = "mantis";
 
     [SerializeField]
     protected float m_jumpHeight = 11;
@@ -34,7 +31,8 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag != "Ground") {
+        if (collision.collider.tag != "Ground")
+        {
             Physics2D.IgnoreCollision(collider2D, collision.collider);
 
         }
@@ -50,8 +48,7 @@ public class PlayerControl : MonoBehaviour {
             //doubleJump = false;
         }
 
-        if ((grounded && ((Input.GetButtonDown("Jump") && name == ladybugName) 
-            || (Input.GetButtonDown("JumpP2") && name == mantisName))))
+        if ((grounded && Input.GetButtonDown("JumpP2") ))
         //if ((grounded || (!doubleJump && name == ladybugName)) && Input.GetButtonDown("Jump"))
         {
             jump = true;
@@ -70,18 +67,14 @@ public class PlayerControl : MonoBehaviour {
     {
 
         // Cache the horizontal input.
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        if(h != 0) {
+        float h = Input.GetAxis("HorizontalP2");
+        if (h != 0)
+        {
             anim.SetBool("IsRunning", true);
         }
         else
         {
             anim.SetBool("IsRunning", false);
-        }
-
-        if(v == 1 && name == ladybugName) {
-            rb.AddForce(Vector3.up * v * floatForce);
         }
 
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
