@@ -38,19 +38,14 @@ public class PlayerControl : MonoBehaviour {
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         
-        if (grounded && rb.velocity.y <= 0)
-        {
-            
-            //doubleJump = false;
-            anim.SetBool("IsJumping", false);
-        }
+        
 
         if ((grounded && ((Input.GetButtonDown("Jump") && name == ladybugName) 
             || (Input.GetButtonDown("JumpP2") && name == mantisName))))
         //if ((grounded || (!doubleJump && name == ladybugName)) && Input.GetButtonDown("Jump"))
         {
             jump = true;
-            anim.SetBool("IsJumping", true);
+            
             //if (!grounded)
             //if (!doubleJump && !grounded)
            // {
@@ -77,8 +72,13 @@ public class PlayerControl : MonoBehaviour {
             anim.SetBool("IsRunning", false);
         }
 
-        if(v == 1 && name == ladybugName) {
+        if(v == 1 ) {
             rb.AddForce(Vector3.up * v * floatForce);
+            anim.SetBool("IsJumping", true);
+        }
+        else
+        {
+            anim.SetBool("IsJumping", false);
         }
 
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...

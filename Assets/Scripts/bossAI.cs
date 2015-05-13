@@ -78,7 +78,6 @@ public class bossAI : MonoBehaviour {
 	{
 		rainInterval -= Time.deltaTime;
 		if (isRain){
-			Debug.Log("Raining");
 			rainingTime -= Time.deltaTime;
 			if (rainingTime < 0.0f)
 			{
@@ -88,7 +87,6 @@ public class bossAI : MonoBehaviour {
 			}
 		}
 		else { // Not raining
-			Debug.Log("NOT Raining");
 			if (rainInterval < 0.0f)
 			{
 				isRain = true;
