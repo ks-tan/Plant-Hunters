@@ -7,6 +7,7 @@ public class MantisSlashScript : MonoBehaviour {
     public float m_cooldownTimer = 0.2f;
     private bool onCooldown = false;
     private float m_timeStamp;
+
     void Awake()
     {
         slashBox = GameObject.Find("MantisSlash").GetComponent<Collider2D>();
