@@ -41,6 +41,7 @@ public class PlayerControl : MonoBehaviour {
         if (grounded)
         {
             //doubleJump = false;
+            anim.SetBool("IsJumping", false);
         }
 
         if ((grounded && ((Input.GetButtonDown("Jump") && name == ladybugName) 
@@ -108,6 +109,7 @@ public class PlayerControl : MonoBehaviour {
 
         if (jump)
         {
+            anim.SetBool("IsJumping", true);
             // Add a vertical force to the player.
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(new Vector2(0f, m_jumpHeight), ForceMode2D.Impulse);
