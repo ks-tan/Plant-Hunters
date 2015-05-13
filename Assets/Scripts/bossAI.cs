@@ -4,6 +4,8 @@ using System.Collections;
 public class bossAI : MonoBehaviour {
 	GameObject GOprojectile;
 	GameObject GOrain;
+	GameObject GOspike;
+
 	bool isShooting;
 	public float maxShootCD;
 	float shootCD;
@@ -13,14 +15,24 @@ public class bossAI : MonoBehaviour {
 	float angle;
 
 	public float maxRainInterval;
+	float rainingTime;
 	float rainInterval;
 	bool isRain;
 
-	
+	public float maxSpikeInterval;
+	float spikeInterval;
+	public float maxSpikeDuration;
+	float spikeDuration;
+	bool isSpike;
+
 	// Use this for initialization
 	void Start () {
 		shootCD = maxShootCD;
 		shootInterval = maxShootInterval;
+		rainInterval = maxRainInterval;
+		rainingTime = maxRainInterval;
+		spikeInterval = maxSpikeInterval;
+		spikeDuration = maxSpikeDuration;
 		angle = 0;
 	}
 
@@ -65,18 +77,75 @@ public class bossAI : MonoBehaviour {
 
 	void RainEvent()
 	{
-		/*rainInterval -= Time.deltaTime;
-		if (rainInterval < maxRainInterval)
-		{
-			isRain = true;
+		rainInterval -= Time.deltaTime;
+		if (isRain){
+			Debug.Log("Raining");
+			rainingTime -= Time.deltaTime;
+			if (rainingTime < 0.0f)
+			{
+				isRain = false;
+				rainingTime = rainInterval = maxRainInterval;
+				Destroy(GOrain);
+			}
 		}
-		
-		GOrain = Instantiate(Resources.Load("env/Prefab/rain")) as GameObject;*/
+		else { // Not raining
+			Debug.Log("NOT Raining");
+			if (rainInterval < 0.0f)
+			{
+				isRain = true;
+				GOrain = Instantiate(Resources.Load("env/Prefab/rain")) as GameObject;
+			}
+		}
+	}
+
+	void SpawnSpikes()
+	{
+		// Boss HP > 67%, Trigger spike 
+		spikeInterval -= Time.deltaTime;
+		if (spikeInterval <= 0.0f)
+		{
+			if (!isSpike) 
+			{
+				GOspike = Instantiate(Resources.Load("env/Prefab/spikes")) as GameObject;
+				int rand = Random.Range(0, 6);
+				switch (rand){
+				case 0:
+					GOspike.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+					break;
+				case 1:
+					GOspike.transform.position = new Vector3(1.0f, 0.0f, 0.0f);
+					break;
+				case 2:
+					GOspike.transform.position = new Vector3(2.0f, 0.0f, 0.0f);
+					break;
+				case 3:
+					GOspike.transform.position = new Vector3(3.0f, 0.0f, 0.0f);
+					break;
+				case 4:
+					GOspike.transform.position = new Vector3(4.0f, 0.0f, 0.0f);
+					break;
+				case 5:
+					GOspike.transform.position = new Vector3(5.0f, 0.0f, 0.0f);
+					break;
+				}
+				isSpike = true;
+			}
+			else {
+				spikeDuration -= Time.deltaTime;
+				if (spikeDuration <= 0.0f)
+				{
+					isSpike = false;
+					spikeDuration = maxSpikeDuration;
+					Destroy(GOspike);
+				}
+			}
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
 		RangeAttack();
 		RainEvent();
+		SpawnSpikes();
 	}
 }
