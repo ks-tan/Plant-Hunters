@@ -1,9 +1,13 @@
 fileFormatVersion: 2
-guid: f41fc85fdbad5854ba9407f009b4aa2c
+guid: 26e25a2a08b60db4787138832187bc8d
 TextureImporter:
   fileIDToRecycleName:
     21300000: spikes_0
     21300002: spikes_1
+    21300004: spikes_2
+    21300006: spikes_3
+    21300008: spikes_4
+    21300010: spikes_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,22 +52,62 @@ TextureImporter:
     - name: spikes_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 0
-        width: 40
-        height: 40
+        width: 70
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: spikes_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 70
         y: 0
-        width: 40
-        height: 40
+        width: 70
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spikes_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spikes_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spikes_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spikes_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -6,6 +6,7 @@ public class bossAI : MonoBehaviour {
 	GameObject GOrain;
 	GameObject GOspike;
 
+	// Shooting
 	bool isShooting;
 	public float maxShootCD;
 	float shootCD;
@@ -14,11 +15,20 @@ public class bossAI : MonoBehaviour {
 	public float speed;
 	float angle;
 
-	public float maxRainInterval;
-	float rainingTime;
+	// Rain
+	public float maxRainTime; // 30 seconds
+	float rainTime;
+	public float maxRainBreakTime; // 15 seconds
+	float rainBreakTime;
+
+	public float maxRainInterval; // 4 seconds
 	float rainInterval;
+	public float maxRainBreakInterval; // 6 seconds
+	float rainBreakInterval;
+	int fruitCount;
 	bool isRain;
 
+	// Spike
 	public float maxSpikeInterval;
 	float spikeInterval;
 	public float maxSpikeDuration;
@@ -29,11 +39,15 @@ public class bossAI : MonoBehaviour {
 	void Start () {
 		shootCD = maxShootCD;
 		shootInterval = maxShootInterval;
-		rainInterval = maxRainInterval;
-		rainingTime = maxRainInterval;
+		angle = 0;
+
 		spikeInterval = maxSpikeInterval;
 		spikeDuration = maxSpikeDuration;
-		angle = 0;
+
+		rainTime = maxRainTime; // Total rain time
+		rainBreakTime = maxRainBreakTime; // Break time after the long rain time
+		rainInterval = maxRainInterval; // Rain intervals within the rain time
+		rainBreakInterval = maxRainBreakInterval; // Break intervals within the rain time
 	}
 
 	void RangeAttack() 
@@ -46,7 +60,7 @@ public class bossAI : MonoBehaviour {
 			isShooting = true;
 		}
 		//Debug.Log (angle);
-		if (isShooting) //if (Input.GetKeyUp("a"))
+		if (isShooting) //if (Input.GetKeyUp("a"))	
 		{
 			shootInterval -= Time.deltaTime;
 			if (shootInterval <= 0.0f)
@@ -76,7 +90,43 @@ public class bossAI : MonoBehaviour {
 
 	void RainEvent()
 	{
-		rainInterval -= Time.deltaTime;
+		/*rainTime = maxRainTime; // Total rain time
+		breakTime = maxBreakTime; // Break time after the long rain time
+		rainInterval = maxRainInterval; // Rain intervals within the rain time
+		rainBreakInterval = maxRainBreakInterval; // Break intervals within the rain time
+		*/
+
+		rainBreakTime -= Time.deltaTime; // 15 --> 0
+		if (rainBreakTime <= 0.0f && !isRain)
+		{
+			// Start raining
+			isRain = true;
+			rainTime = maxRainTime;
+		}
+		if (isRain)
+		{
+			///////RAINS////////////
+			rainInterval -= Time.deltaTime; // 4 --> 0
+			if (rainInterval <= 0.0f) // Stop raining temporarily
+			{
+				rainBreakInterval = maxRainBreakInterval;
+			}
+				
+			rainBreakInterval -= Time.deltaTime; // 6 --> 0
+			if (rainBreakInterval <= 0.0f) // Start raining again
+			{	
+				rainInterval = maxRainInterval;
+			}
+
+			rainTime -= Time.deltaTime; //30 ---> 0
+			if (rainTime <= 0.0f) // Stop raining
+			{
+				rainBreakTime = maxRainBreakTime;
+				isRain = false;
+			}
+		}
+
+		/*rainInterval -= Time.deltaTime;
 		if (isRain){
 			rainingTime -= Time.deltaTime;
 			if (rainingTime < 0.0f)
@@ -92,7 +142,7 @@ public class bossAI : MonoBehaviour {
 				isRain = true;
 				GOrain = Instantiate(Resources.Load("env/Prefab/rain")) as GameObject;
 			}
-		}
+		}*/	
 	}
 
 	void SpawnSpikes()
@@ -104,25 +154,21 @@ public class bossAI : MonoBehaviour {
 			if (!isSpike) 
 			{
 				GOspike = Instantiate(Resources.Load("env/Prefab/spikes")) as GameObject;
-				int rand = Random.Range(0, 6);
+				int rand = Random.Range(0, 3);
+				float rand2 = 0.0f;
+
 				switch (rand){
 				case 0:
-					GOspike.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+					rand2 = Random.Range(-6.76f, 6.17f);
+					GOspike.transform.position = new Vector3(rand2, -10.37f, 0.0f);
 					break;
 				case 1:
-					GOspike.transform.position = new Vector3(1.0f, 0.0f, 0.0f);
+					rand2 = Random.Range(7.8f, 12.15f);
+					GOspike.transform.position = new Vector3(rand2, -4.58f, 0.0f);
 					break;
 				case 2:
-					GOspike.transform.position = new Vector3(2.0f, 0.0f, 0.0f);
-					break;
-				case 3:
-					GOspike.transform.position = new Vector3(3.0f, 0.0f, 0.0f);
-					break;
-				case 4:
-					GOspike.transform.position = new Vector3(4.0f, 0.0f, 0.0f);
-					break;
-				case 5:
-					GOspike.transform.position = new Vector3(5.0f, 0.0f, 0.0f);
+					rand2 = Random.Range(-12.2f, -8.0f);
+					GOspike.transform.position = new Vector3(rand2, -4.58f, 0.0f);
 					break;
 				}
 				isSpike = true;

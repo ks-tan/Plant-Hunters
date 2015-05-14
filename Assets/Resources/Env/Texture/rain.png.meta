@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: f371642f818fce547b0e3b357091ce3a
+guid: a5a4070b9b20406409fa43cb723deb91
 TextureImporter:
   fileIDToRecycleName:
     21300000: rain_0
     21300002: rain_1
+    21300004: rain_2
+    21300006: rain_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -49,19 +51,39 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1280
-        height: 720
+        y: 576
+        width: 1024
+        height: 576
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: rain_1
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1024
+        y: 576
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rain_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 1280
-        height: 720
+        width: 1024
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rain_3
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 576
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
