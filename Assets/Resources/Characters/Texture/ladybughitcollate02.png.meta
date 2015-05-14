@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 844503c1e04b99744b338fab493c7df3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ladybughitcollate02_0
+    21300002: ladybughitcollate02_1
+    21300004: ladybughitcollate02_2
+    21300006: ladybughitcollate02_3
+    21300008: ladybughitcollate02_4
+    21300010: ladybughitcollate02_5
+    21300012: ladybughitcollate02_6
+    21300014: ladybughitcollate02_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +33,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ladybughitcollate02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 618
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_1
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 618
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_2
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 618
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_3
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 618
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_5
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 1
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_6
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 1
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ladybughitcollate02_7
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 1
+        width: 769
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

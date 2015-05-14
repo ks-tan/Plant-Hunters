@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 757bc039f1e777d4a832123eadb42e7b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mantishitcollate02_0
+    21300002: mantishitcollate02_1
+    21300004: mantishitcollate02_2
+    21300006: mantishitcollate02_3
+    21300008: mantishitcollate02_4
+    21300010: mantishitcollate02_5
+    21300012: mantishitcollate02_6
+    21300014: mantishitcollate02_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +33,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mantishitcollate02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 617
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_1
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 617
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_2
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 617
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_3
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 617
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_5
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_6
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mantishitcollate02_7
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 1
+        width: 764
+        height: 616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
