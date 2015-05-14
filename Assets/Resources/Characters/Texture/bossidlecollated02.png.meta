@@ -1,7 +1,17 @@
 fileFormatVersion: 2
-guid: 60ad22e1815d14a4c8caf44e22e1d6da
+guid: 50e3e7a23d43b934497bb6b5575a0a20
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: bossidlecollated02_0
+    21300002: bossidlecollated02_1
+    21300004: bossidlecollated02_2
+    21300006: bossidlecollated02_3
+    21300008: bossidlecollated02_4
+    21300010: bossidlecollated02_5
+    21300012: bossidlecollated02_6
+    21300014: bossidlecollated02_7
+    21300016: bossidlecollated02_8
+    21300018: bossidlecollated02_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +35,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +52,106 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: bossidlecollated02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1694
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_1
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1694
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_2
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 1694
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_3
+      rect:
+        serializedVersion: 2
+        x: 2661
+        y: 1694
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 847
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_5
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 847
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_6
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 847
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_7
+      rect:
+        serializedVersion: 2
+        x: 2661
+        y: 847
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bossidlecollated02_9
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 0
+        width: 887
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

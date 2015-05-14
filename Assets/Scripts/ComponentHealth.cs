@@ -5,7 +5,7 @@ public class ComponentHealth : MonoBehaviour
 {
     public float maxHP = 10;
     public bool isInvul = false;
-    public float currHP;
+    protected float currHP;
 	
 	// Getter
     public float CurrHP { get { return currHP; } }
