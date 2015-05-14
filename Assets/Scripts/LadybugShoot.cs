@@ -6,7 +6,9 @@ public class LadybugShoot : MonoBehaviour {
     private bool onCooldown = false;
     private ComponentCooldown cd;
     public ObjectPoolerScript bulletPool;
-    [SerializeField]
+	public AudioClip[] sfx;
+
+	[SerializeField]
     protected int m_dmg = 1;
 
     void Awake()
@@ -20,14 +22,12 @@ public class LadybugShoot : MonoBehaviour {
         if (Input.GetButton("Fire1") )
         {
             FireBullet();
-
         }
-
     }
 
     public void FireBullet()
     {
-        if (!onCooldown)
+		if (!onCooldown && !GetComponent<ShieldScript>().isShielding)
         {
             Rigidbody2D bulletRb;
             GameObject bulletObj = bulletPool.GetPooledObject();
@@ -38,6 +38,9 @@ public class LadybugShoot : MonoBehaviour {
                 bulletObj.SetActive(true);
                 SetCooldown(true);
                 cd.StartCooldown();
+
+				audio.clip = sfx[0];
+				audio.Play();
             }
         }
     }
