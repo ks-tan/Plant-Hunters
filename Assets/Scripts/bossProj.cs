@@ -37,8 +37,8 @@ public class bossProj : MonoBehaviour {
 		transform.position += new Vector3(dirX, dirY, 0.0f);
 
 		//Debug.Log(transform.position.x + " " + transform.position.y);
-		if (transform.position.x < -20.0f || transform.position.x > 20.0f ||
-		    transform.position.y < -10.0f || transform.position.y > 10.0f)
+		if (transform.position.x < -50.0f || transform.position.x > 50.0f ||
+		    transform.position.y < -50.0f || transform.position.y > 50.0f)
 		{
 			//Debug.Log("DestROYED");
 			Destroy(gameObject);

@@ -14,6 +14,8 @@ public class bossAI : MonoBehaviour {
 	float shootInterval;
 	public float speed;
 	float angle;
+	float randomAngle;
+	bool generateRandom;
 
 	// Rain
 	public float maxRainTime; // 30 seconds
@@ -26,6 +28,7 @@ public class bossAI : MonoBehaviour {
 	public float maxRainBreakInterval; // 6 seconds
 	float rainBreakInterval;
 	int fruitCount;
+	bool isRainTime;
 	bool isRain;
 
 	// Spike
@@ -57,6 +60,11 @@ public class bossAI : MonoBehaviour {
 		shootCD -= Time.deltaTime;
 		if (shootCD <= 0.0f)
 		{
+			if (!generateRandom) 
+			{
+				randomAngle = Random.Range(0, 30);
+				generateRandom = true;
+			}
 			isShooting = true;
 		}
 		//Debug.Log (angle);
@@ -66,14 +74,12 @@ public class bossAI : MonoBehaviour {
 			if (shootInterval <= 0.0f)
 			{
 				GOprojectile = Instantiate(Resources.Load("projectiles/Prefab/bossProj"), new Vector3(transform.position.x, 
-				             		       transform.position.y + 2.0f, -0.1f), Quaternion.identity) as GameObject;
+				             		       transform.position.y + 5.0f, -0.1f), Quaternion.identity) as GameObject;
 				
 				GOprojectile.transform.position = new Vector3(GOprojectile.transform.position.x, GOprojectile.transform.position.y, -0.1f);
 				
-				//int angle = Random.Range(0, 11) * 30;
-				
-				GOprojectile.GetComponent<bossProj>().SetDirection(Mathf.Cos(Mathf.PI / 180 * angle * 30) * speed * Time.deltaTime, 
-				                                                 Mathf.Sin(Mathf.PI / 180 * angle * 30) * speed * Time.deltaTime);
+				GOprojectile.GetComponent<bossProj>().SetDirection(Mathf.Cos(Mathf.PI / 180 * angle * 30 + randomAngle) * speed * Time.deltaTime, 
+				                                                   Mathf.Sin(Mathf.PI / 180 * angle * 30 + randomAngle) * speed * Time.deltaTime);
 				
 				shootInterval = maxShootInterval;
 				angle++;
@@ -85,64 +91,55 @@ public class bossAI : MonoBehaviour {
 			angle = 0;
 			isShooting = false;
 			shootCD = maxShootCD;
+			generateRandom = false;
 		}
 	}
 
 	void RainEvent()
 	{
-		/*rainTime = maxRainTime; // Total rain time
-		breakTime = maxBreakTime; // Break time after the long rain time
-		rainInterval = maxRainInterval; // Rain intervals within the rain time
-		rainBreakInterval = maxRainBreakInterval; // Break intervals within the rain time
-		*/
-
 		rainBreakTime -= Time.deltaTime; // 15 --> 0
-		if (rainBreakTime <= 0.0f && !isRain)
+		if (rainBreakTime <= 0.0f && !isRainTime)
 		{
 			// Start raining
-			isRain = true;
+			isRainTime = true;
 			rainTime = maxRainTime;
 		}
-		if (isRain)
+		if (isRainTime)
 		{
-			///////RAINS////////////
-			rainInterval -= Time.deltaTime; // 4 --> 0
-			if (rainInterval <= 0.0f) // Stop raining temporarily
+			if (!isRain)
 			{
-				rainBreakInterval = maxRainBreakInterval;
+				rainBreakInterval -= Time.deltaTime; // 6 --> 0
+				if (rainBreakInterval <= 0.0f) // Start raining again
+				{	
+					//Debug.Log("START RAINING");
+					isRain = true;
+					GOrain = Instantiate(Resources.Load("env/Prefab/rain")) as GameObject;
+					rainInterval = maxRainInterval;
+				}
 			}
-				
-			rainBreakInterval -= Time.deltaTime; // 6 --> 0
-			if (rainBreakInterval <= 0.0f) // Start raining again
-			{	
-				rainInterval = maxRainInterval;
+			else
+			{
+				rainInterval -= Time.deltaTime; // 4 --> 0
+				if (rainInterval <= 0.0f) 
+				{	// Interval stop rain
+
+					//Debug.Log("rainInterval: " + rainInterval);
+					isRain = false;
+					rainBreakInterval = maxRainBreakInterval;
+					if (GOrain != null)
+					{
+						Destroy(GOrain);
+					}
+				}
 			}
 
 			rainTime -= Time.deltaTime; //30 ---> 0
 			if (rainTime <= 0.0f) // Stop raining
 			{
 				rainBreakTime = maxRainBreakTime;
-				isRain = false;
+				isRainTime = false;
 			}
 		}
-
-		/*rainInterval -= Time.deltaTime;
-		if (isRain){
-			rainingTime -= Time.deltaTime;
-			if (rainingTime < 0.0f)
-			{
-				isRain = false;
-				rainingTime = rainInterval = maxRainInterval;
-				Destroy(GOrain);
-			}
-		}
-		else { // Not raining
-			if (rainInterval < 0.0f)
-			{
-				isRain = true;
-				GOrain = Instantiate(Resources.Load("env/Prefab/rain")) as GameObject;
-			}
-		}*/	
 	}
 
 	void SpawnSpikes()
@@ -160,15 +157,15 @@ public class bossAI : MonoBehaviour {
 				switch (rand){
 				case 0:
 					rand2 = Random.Range(-6.76f, 6.17f);
-					GOspike.transform.position = new Vector3(rand2, -10.37f, 0.0f);
+					GOspike.transform.position = new Vector3(rand2, -9.62f, 0.0f);
 					break;
 				case 1:
-					rand2 = Random.Range(7.8f, 12.15f);
-					GOspike.transform.position = new Vector3(rand2, -4.58f, 0.0f);
+					rand2 = Random.Range(8.86f, 11.39f);
+					GOspike.transform.position = new Vector3(rand2, -3.69f, 0.0f);
 					break;
 				case 2:
-					rand2 = Random.Range(-12.2f, -8.0f);
-					GOspike.transform.position = new Vector3(rand2, -4.58f, 0.0f);
+					rand2 = Random.Range(-11.27f, -8.57f);
+					GOspike.transform.position = new Vector3(rand2, -3.69f, 0.0f);
 					break;
 				}
 				isSpike = true;
