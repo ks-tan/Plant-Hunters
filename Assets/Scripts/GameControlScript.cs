@@ -7,15 +7,17 @@ public class GameControlScript : MonoBehaviour {
     public bossAI boss;
     public int rainDmg = 1;
     public static GameControlScript current;
+    private FruitSpawnScript fruitSpwn;
 
 
     void Awake()
     {
+        fruitSpwn = GetComponent<FruitSpawnScript>();
         current = this;
     }
 	// Use this for initialization
 	void Start () {
-	
+	    
 	}
 	
 	// Update is called once per frame
@@ -28,7 +30,13 @@ public class GameControlScript : MonoBehaviour {
             if(mantisHp != null) {
                 mantisHp.Modify((-rainDmg * Time.deltaTime));
             }
-            
+            if(fruitSpwn.AllDestroyed()) {
+                boss.SetStopRain(true);
+            }
+            else
+            {
+                boss.SetStopRain(false);
+            }
             
         }
 	}

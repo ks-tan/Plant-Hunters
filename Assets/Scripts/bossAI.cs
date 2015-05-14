@@ -16,6 +16,7 @@ public class bossAI : MonoBehaviour {
 	float angle;
 	float randomAngle;
 	bool generateRandom;
+    bool stopRain = false;
 
 	// Rain
 	public float maxRainTime; // 30 seconds
@@ -181,11 +182,20 @@ public class bossAI : MonoBehaviour {
 			}
 		}
 	}
+    public void SetStopRain(bool rain) {
+        stopRain = rain;
+        if(rain && GOrain != null) {
+            Destroy(GOrain);
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
 		RangeAttack();
-		RainEvent();
+        if (!stopRain)
+        {
+            RainEvent();
+        }
 		SpawnSpikes();
 	}
 

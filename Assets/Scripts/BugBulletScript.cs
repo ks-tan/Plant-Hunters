@@ -5,6 +5,7 @@ public class BugBulletScript : MonoBehaviour {
     private string owner = "ladybug";
     private string player = "Player";
     private PlayerControl playerCont;
+    public float dmgMult = 2f;
     public float bulletLifeTime = 2f;
     public int bulletDmg = 1;
 
@@ -33,10 +34,19 @@ public class BugBulletScript : MonoBehaviour {
 
     public void OnCollideEnemy(Collider2D collider)
     {
-        ComponentHealth enemyHp = collider.gameObject.GetComponent<ComponentHealth>();
+        ComponentHealth enemyHp = (collider.name=="headshot")? collider.GetComponentInParent<ComponentHealth>(): 
+            collider.gameObject.GetComponent<ComponentHealth>();
         if (enemyHp != null)
         {
-            enemyHp.Modify(-bulletDmg);
+            if(collider.name == "headshot") {
+                enemyHp.Modify(-bulletDmg * dmgMult);
+            }
+            else
+            {
+                enemyHp.Modify(-bulletDmg);
+
+            }
+
         }
         Destroy();
     }

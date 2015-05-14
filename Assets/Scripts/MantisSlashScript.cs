@@ -4,6 +4,7 @@ using System.Collections;
 public class MantisSlashScript : MonoBehaviour {
     public int slashDmg = 5;
     public float m_cooldownTimer = 0.2f;
+    public float dmgMult = 2f;
     private bool onCooldown = false;
     private float m_timeStamp;
     private Animator anim;
@@ -26,7 +27,7 @@ public class MantisSlashScript : MonoBehaviour {
         if (Input.GetButtonDown("Fire1P2") && !onCooldown)
         {
             anim.Play("Mantis_attack", -1, 0);
-            StartCooldown();
+            
         }
     }
 
@@ -39,11 +40,21 @@ public class MantisSlashScript : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerStay2D (Collider2D other) {
 	    if(Input.GetButtonDown("Fire1P2") && other.collider2D.tag != "Ground" && !onCooldown) {
-           
-            ComponentHealth enemyHp = other.gameObject.GetComponent<ComponentHealth>();
+            StartCooldown();
+            ComponentHealth enemyHp = (other.name == "headshot") ? other.GetComponentInParent<ComponentHealth>() :
+            other.gameObject.GetComponent<ComponentHealth>();
             if (enemyHp != null)
             {
-                enemyHp.Modify(-slashDmg);
+                if (other.name == "headshot")
+                {
+                    enemyHp.Modify(-slashDmg * dmgMult);
+                }
+                else
+                {
+                    enemyHp.Modify(-slashDmg);
+
+                }
+
             }
             
         }
